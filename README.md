@@ -32,9 +32,20 @@ En esta sección deben analizar el programa entregado.
 
 Responder:
 
-- ¿Qué partes del código pueden convertirse en métodos?
-- ¿Qué bloques de código se repiten?
-- ¿Qué responsabilidades pueden separarse?
+## ¿Qué partes del código pueden convertirse en métodos?
+  las opciones del menu agregar, mostrar, promedio y nota mas alta de los  estudiantes tambien se pueden connvertir en metodo algunas validaciones
+  como la validacion de enteros, doubles
+
+## ¿Qué bloques de código se repiten
+  se repiten las validaciones si las listas de estudiantes y calificaciones estan vacias y el recorrido de las mismas listas con for
+
+## ¿Qué responsabilidades pueden separarse?
+  el menu que sea el unico que se encuentre en el main 
+  ingreso a estudiantes
+  mostrar estudiantes
+  mostrar promedio de calificaciones
+  mostrar al estudiante con la mejor nota
+  las validaciones
 
 Ejemplos de posibles tareas:
 
@@ -43,19 +54,30 @@ Ejemplos de posibles tareas:
 - Calcular promedio.
 - Mostrar estudiante con mayor calificación.
 
-Explicar por qué dividir estas tareas mejora el programa.
+## Explicar por qué dividir estas tareas mejora el programa.
+hace un programa mas limpio, organizado y nos da una mejor manera de poder manipularlo para cambiarlo si es necesario 
 
----
 
 ## 2️⃣ Variables Locales vs Globales
 
 Responder:
 
-- ¿Qué variables deberían declararse como globales (atributos `static` de la clase)?
-- ¿Cuáles deberían ser locales dentro de un método?
-- ¿Por qué?
+## ¿Qué variables deberían declararse como globales (atributos `static` de la clase)?
+  la variable scanner ya que al empezar la modularizacion todos los metodos la tendran que usar
+  
+## ¿Cuáles deberían ser locales dentro de un método?
+- int opcion
+- String nombre
+- double calificacion
+- double suma
+- double promedio
+- double maxCalificacion
+- String estudianteMax
+  
+## ¿Por qué?
+por qué solo se usan para una operacion especifica dentro de un metodo y no representan el estado permanente del sistema 
 
-Reflexionar sobre:
+## Reflexionar sobre:
 
 - Alcance (scope)
 - Tiempo de vida de la variable
