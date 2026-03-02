@@ -24,22 +24,25 @@ public class Main {
         System.out.println("5. Salir");
         System.out.print("Seleccione una opción: ");
 
-         opcion = Integer.parseInt(scanner.nextLine());
+         opcion =  leerEntero();
         	
 
             switch (opcion) {
                 case 1:
-              	  		agregarEstudiantes();
-              	  		
+                	ingresoDeEstudiante();
+              	
                     break;
                 case 2:
               	  		mostrarEstudiantes();
+              	  		
                     break;
                 case 3:
                 		calcularPromedio();
+                		
                     break;
                 case 4:
                 		mostrarNotayEstudiante();
+                		
                     break;
                 case 5:
               	  System.out.println("Saliendo del sistema...");
@@ -50,19 +53,80 @@ public class Main {
     }
         }
     
-    public static void agregarEstudiantes() {
-    	   System.out.print("Ingrese el nombre del estudiante: ");
-           String nombre = scanner.nextLine();
-
-           System.out.print("Ingrese la calificación del estudiante: ");
-           double calificacion = Double.parseDouble(scanner.nextLine());
-
-           estudiantes.add(nombre);
-           calificaciones.add(calificacion);
-
-           System.out.println("Estudiante agregado correctamente.");
-       }
+    //VALIDACIONES 
     
+    public static int leerEntero() {
+        while (true) {
+            try {
+                return Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.print("Debe ingresar un número válido: ");
+            }
+        }
+    }
+
+    
+    public static double leerDouble() {
+        while (true) {
+            try {
+                double valor = Double.parseDouble(scanner.nextLine());
+
+                if (valor >= 0 && valor <= 100) {
+                    return valor;
+                } else {
+                    System.out.print("La calificación debe estar entre 0 y 100: ");
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.print("Entrada inválida. Ingrese una calificación válida: ");
+            }
+        }
+    }
+    
+    public static String leerNombre() {
+        while (true) {
+            String nombre = scanner.nextLine().trim();
+
+            // Verifica que no esté vacío
+            if (nombre.isEmpty()) {
+                System.out.print("El nombre no puede estar vacío. Intente nuevamente: ");
+                continue;
+            }
+
+            // Verifica que solo tenga letras y espacios
+            if (!nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) { //a-z y A-Z ademas de Ciertos caracteres especiales como lo son las tildes y la Ñ
+                System.out.print("El nombre solo debe contener letras. Intente nuevamente: ");
+                continue;
+            }
+
+            return nombre;
+        }
+    }
+   
+// MODULOS
+    
+    //#1 INGRESO DE ESTUDIANTES
+   
+   public static void agregarEstudiante(String nombre, double calificacion) {
+	    estudiantes.add(nombre);
+	    calificaciones.add(calificacion);
+	}
+  
+   public static void ingresoDeEstudiante() {
+	    System.out.print("Ingrese el nombre del estudiante: ");
+	    String nombre = leerNombre();
+
+	    System.out.print("Ingrese la calificación del estudiante: ");
+	    double calificacion = leerDouble();
+
+	    agregarEstudiante(nombre, calificacion);
+
+	    System.out.println("Estudiante agregado correctamente.");
+	}
+   
+   
+   
+   // #2 MOSTRAR  ESTUDIANTES
     public static void mostrarEstudiantes() {
         if (estudiantes.isEmpty()) {
             System.out.println("No hay estudiantes registrados.");
@@ -110,11 +174,4 @@ public class Main {
                     + estudianteMax + " con " + maxCalificacion);
         }
     }
-    
-    
-    
-    
-    
-  
     }
-
