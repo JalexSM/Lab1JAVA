@@ -127,17 +127,30 @@ public class Main {
    
    
    // #2 MOSTRAR  ESTUDIANTES
-    public static void mostrarEstudiantes() {
-        if (estudiantes.isEmpty()) {
-            System.out.println("No hay estudiantes registrados.");
-        } else {
-            System.out.println("\nLista de estudiantes:");
-            for (int i = 0; i < estudiantes.size(); i++) {
-                System.out.println(estudiantes.get(i) +
-                        " - Calificación: " + calificaciones.get(i));
-            }
-        }
-        }
+   
+   
+   
+   
+   public static void mostrarEstudiantes() {
+       if (!hayEstudiantes() ) {
+           System.out.println("No hay estudiantes registrados.");
+       } else {
+       	imprimirListaEstudiantes();
+           }
+       }
+    
+    public static boolean hayEstudiantes() {
+    	return !estudiantes.isEmpty();
+    }
+    
+    public static void imprimirListaEstudiantes() {
+	    for (int i = 0; i < estudiantes.size(); i++) {
+	        System.out.println("Nombre: " + estudiantes.get(i) +
+	                           " | Calificación: " + calificaciones.get(i));
+	    }
+	}
+    
+    // #3 CALCULO DE PROMEDIO 
     
     public static void calcularPromedio() {
         if (calificaciones.isEmpty()) {
