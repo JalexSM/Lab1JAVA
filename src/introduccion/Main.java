@@ -41,7 +41,7 @@ public class Main {
                 		
                     break;
                 case 4:
-                		mostrarNotayEstudiante();
+                		notasMax();
                 		
                     break;
                 case 5:
@@ -177,12 +177,21 @@ public class Main {
     }
         //_________________________________________________________________________________
           
-    public static void mostrarNotayEstudiante() {
-
-        if (calificaciones.isEmpty()) {
-            System.out.println("No hay calificaciones registradas.");
-        } else {
-
+    // #4 NOTA MAS ALTA
+    
+    public static void notasMax() {
+    	if(!hayCalificaciones()) {
+    		
+    	
+    		System.out.println("No hay calificacione registradas");
+    		}else {
+    			estudianteMax();
+    			
+    		}
+    }
+    
+    public static void estudianteMax() {
+    	
             double maxCalificacion = calificaciones.get(0);
             String estudianteMax = estudiantes.get(0);
 
@@ -197,4 +206,5 @@ public class Main {
                     + estudianteMax + " con " + maxCalificacion);
         }
     }
-    }
+    
+    
