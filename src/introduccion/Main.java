@@ -165,8 +165,20 @@ public class Main {
             double promedio = suma / calificaciones.size();
             System.out.println("El promedio de calificaciones es: " + promedio);
         }
-        }
-    
+    }
+        //_________________________________________________________________________________
+    public static void promediodelosEstudiantes() {
+    	if(!hayCalificaciones()  ) {
+    		System.out.println("No hay calificacione registradas");
+    	}else {
+    		calcularPromedio();
+    	}
+    }
+    public static boolean hayCalificaciones() {
+    	return !calificaciones.isEmpty();
+    }
+        //_________________________________________________________________________________
+          
     public static void mostrarNotayEstudiante() {
 
         if (calificaciones.isEmpty()) {
