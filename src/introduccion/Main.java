@@ -37,11 +37,11 @@ public class Main {
               	  		
                     break;
                 case 3:
-                		calcularPromedio();
+                	promediodelosEstudiantes();
                 		
                     break;
                 case 4:
-                		mostrarNotayEstudiante();
+                		notasMax();
                 		
                     break;
                 case 5:
@@ -152,6 +152,7 @@ public class Main {
     
     // #3 CALCULO DE PROMEDIO 
     
+<<<<<<< HEAD
     public static void calcularPromedio() {
   	  double suma = 0;
 
@@ -163,6 +164,9 @@ public class Main {
         System.out.println("El promedio de calificaciones es: " + promedio);
     }
         //_________________________________________________________________________________
+=======
+
+>>>>>>> a845201ceda953f0855af9b52fdc20255c7a0b29
     public static void promediodelosEstudiantes() {
     	if(!hayCalificaciones()  ) {
     		System.out.println("No hay calificacione registradas");
@@ -173,14 +177,35 @@ public class Main {
     public static boolean hayCalificaciones() {
     	return !calificaciones.isEmpty();
     }
+    
+    
+    public static void calcularPromedio() {
+  	  	double suma = 0;
+
+  	  		for (double calificacion : calificaciones) {
+  	  			suma += calificacion;
+  	  		}
+
+  	  		double promedio = suma / calificaciones.size();
+        System.out.println("El promedio de calificaciones es: " + promedio);
+    }
         //_________________________________________________________________________________
           
-    public static void mostrarNotayEstudiante() {
-
-        if (calificaciones.isEmpty()) {
-            System.out.println("No hay calificaciones registradas.");
-        } else {
-
+    // #4 NOTA MAS ALTA
+    
+    public static void notasMax() {
+    	if(!hayCalificaciones()) {
+    		
+    	
+    		System.out.println("No hay calificacione registradas");
+    		}else {
+    			estudianteMax();
+    			
+    		}
+    }
+    
+    public static void estudianteMax() {
+    	
             double maxCalificacion = calificaciones.get(0);
             String estudianteMax = estudiantes.get(0);
 
@@ -195,4 +220,5 @@ public class Main {
                     + estudianteMax + " con " + maxCalificacion);
         }
     }
-    }
+    
+    

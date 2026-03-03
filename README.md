@@ -83,7 +83,6 @@ por qué solo se usan para una operacion especifica dentro de un metodo y no rep
 - Tiempo de vida de la variable
 - Riesgos de modificar datos globales accidentalmente
 
----
 
 # 🏗️ Parte 2 – Modularización del Programa
 
@@ -115,40 +114,33 @@ Implementar mejoras en el programa:
 
 Explicar en esta sección:
 
-- Qué errores podrían ocurrir.
-- Qué validaciones implementaron.
-- Por qué son importantes.
+- Qué errores podrían ocurrir: 
+Ingresar datos donde van números y viceversa o en el caso de las calificaciones agregar un numero mayor a 100 si no hay validación.
 
----
+- Qué validaciones implementaron.
+1. En el ingreso de calificaciones la validación que se agrego fue que el numero ingresado debia estar entre 0 y 100 para calcular un promedio correcto.
+
+2. Para el ingreso de los nombres la validación que se agrego es que solo se ingresen letras y caracteres especiales como tildes y la letra ñ
+
+- Por qué son importantes.
+Para que el usuario ingrese lo que se solicita y que no interfiera con el funcionamiento del programa pues los métodos están esperando un tipo de dato especifico para ejecutarse y si no se ingresan datos correctos es un error.
 
 # 🧩 Parte 4 – Preguntas de Reflexión
 
 Responder con sus propias palabras.
 
 ## 1️⃣ ¿Qué ventajas tiene dividir el código en métodos?
+Al dividir el programa en métodos hace que este mas ordenado y cada uno de los métodos hace algo en especifico permitiendo cambiar las condiciones del método si es necesario. de la misma forma una vez creado el método se puede llamar desde un método distinto evitando que el código sea repetitivo.
 
-Reflexionar sobre:
-
-- Organización
-- Reutilización
-- Mantenimiento
-- Claridad
-
----
 
 ## 2️⃣ ¿Por qué no es recomendable usar muchas variables globales?
+uno de los mayores inconvenientes es que ocupa demasiado espacio en la memoria y puede generar errores al intentar definir una variable en otra parte del programa con el mismo nombre puede que ya tenga un valor y mandara un resultado inexacto.
 
-Reflexionar sobre:
+No se pueden reutilizar fácilmente pues tienen un valor definido y si en otro programa se necesita otro valor es necesario cambiarlo y esto a la vez nos provocara errores en otras partes del programa.
 
-- Posibilidad de errores inesperados
-- Dificultad para depurar
-- Dependencia entre métodos
-
----
 
 ## 3️⃣ ¿Cómo mejora la modularización la legibilidad del código?
-
----
+Al tener el programa dividido en métodos otros colaboradores pueden identificar fácilmente para que funciona cada método y realizar cambios si es necesario.
 
 # 📦 Entregables
 
