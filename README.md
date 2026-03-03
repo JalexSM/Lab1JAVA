@@ -77,11 +77,38 @@ Responder:
 ## ¿Por qué?
 por qué solo se usan para una operacion especifica dentro de un metodo y no representan el estado permanente del sistema 
 
-## Reflexionar sobre:
+# Reflexionar sobre:
 
-- Alcance (scope)
-- Tiempo de vida de la variable
-- Riesgos de modificar datos globales accidentalmente
+## Alcance (Scope)
+
+El alcance de una variable se refiere al lugar del programa donde puede ser utilizada.
+
+En Java existen principalmente:
+
+- Variables locales: Se declaran dentro de un método o bloque y solo pueden usarse allí.
+- Variables globales (atributos de clase): Se declaran fuera de los métodos y pueden ser utilizadas por todos los métodos de la clase.
+
+Limitar el alcance ayuda a tener mayor control sobre el programa y reduce la posibilidad de errores.
+
+## Tiempo de vida de la variable
+
+El tiempo de vida es el período durante el cual una variable existe en memoria.
+
+- Una variable local vive únicamente mientras se ejecuta el método donde fue creada.
+- Una variable global o de instancia vive mientras exista el objeto.
+- Una variable static vive mientras el programa esté en ejecución.
+
+Comprender esto permite administrar mejor la memoria y el comportamiento del programa.
+
+## Riesgos de modificar datos globales accidentalmente
+
+- Cambios inesperados en el valor de la variable.
+- Errores difíciles de detectar.
+- Dependencias ocultas entre métodos.
+- Resultados incorrectos en distintas partes del programa.
+- Mayor dificultad para mantener el código.
+- Reducción de la seguridad y el control del programa.
+- Mayor probabilidad de efectos secundarios.
 
 
 # 🏗️ Parte 2 – Modularización del Programa
