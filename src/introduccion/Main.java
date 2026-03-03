@@ -153,18 +153,14 @@ public class Main {
     // #3 CALCULO DE PROMEDIO 
     
     public static void calcularPromedio() {
-        if (calificaciones.isEmpty()) {
-            System.out.println("No hay calificaciones registradas.");
-        } else {
-            double suma = 0;
+  	  double suma = 0;
 
-            for (double calificacion : calificaciones) {
-                suma += calificacion;
-            }
-
-            double promedio = suma / calificaciones.size();
-            System.out.println("El promedio de calificaciones es: " + promedio);
+        for (double calificacion : calificaciones) {
+            suma += calificacion;
         }
+
+        double promedio = suma / calificaciones.size();
+        System.out.println("El promedio de calificaciones es: " + promedio);
     }
         //_________________________________________________________________________________
     public static void promediodelosEstudiantes() {
