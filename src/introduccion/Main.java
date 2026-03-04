@@ -151,22 +151,7 @@ public class Main {
 	}
     
     // #3 CALCULO DE PROMEDIO 
-    
-<<<<<<< HEAD
-    public static void calcularPromedio() {
-  	  double suma = 0;
 
-        for (double calificacion : calificaciones) {
-            suma += calificacion;
-        }
-
-        double promedio = suma / calificaciones.size();
-        System.out.println("El promedio de calificaciones es: " + promedio);
-    }
-        //_________________________________________________________________________________
-=======
-
->>>>>>> a845201ceda953f0855af9b52fdc20255c7a0b29
     public static void promediodelosEstudiantes() {
     	if(!hayCalificaciones()  ) {
     		System.out.println("No hay calificacione registradas");
@@ -189,7 +174,7 @@ public class Main {
   	  		double promedio = suma / calificaciones.size();
         System.out.println("El promedio de calificaciones es: " + promedio);
     }
-        //_________________________________________________________________________________
+
           
     // #4 NOTA MAS ALTA
     
